@@ -7,8 +7,9 @@ const todoRouter = require('./routes/todo.routes');
 
 const app = express();
 app.use(express.json());
+app.use(express.static('src/public'));
 
-app.get('/', (req, res) => {
+app.get('/health', (req, res) => {
   res.json({ status: 'ok', message: 'Todo API running' });
 });
 

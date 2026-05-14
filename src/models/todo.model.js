@@ -7,8 +7,13 @@ const todoSchema = new mongoose.Schema(
       trim: true,            // removes whitespace from both ends
     },
     completed: {
-      type: Boolean,        // done or not done — two states
-      default: false,     // a new todo is finished or not finished by default?
+      type: Boolean,
+      default: false,
+    },
+    priority: {
+      type: String,
+      enum: ['low', 'medium', 'high'],
+      default: 'medium',
     },
   },
   {
